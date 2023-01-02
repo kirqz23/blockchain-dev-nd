@@ -1,0 +1,777 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@8.11.0
+2 info using node@v16.14.0
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:/Users/kirqz/repos/blockchain-dev-nd/blockchain_fundamentals/project_1/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 4ms
+11 timing config:load:file:/Users/kirqz/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/usr/local/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 0ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 11ms
+19 timing npm:load:configload Completed in 11ms
+20 timing npm:load:mkdirpcache Completed in 1ms
+21 timing npm:load:mkdirplogs Completed in 1ms
+22 verbose title npm install
+23 verbose argv "install"
+24 timing npm:load:setTitle Completed in 13ms
+25 timing config:load:flatten Completed in 2ms
+26 timing npm:load:display Completed in 3ms
+27 verbose logfile logs-max:10 dir:/Users/kirqz/.npm/_logs
+28 verbose logfile /Users/kirqz/.npm/_logs/2023-01-02T19_35_24_263Z-debug-0.log
+29 timing npm:load:logFile Completed in 6ms
+30 timing npm:load:timers Completed in 0ms
+31 timing npm:load:configScope Completed in 0ms
+32 timing npm:load Completed in 35ms
+33 timing arborist:ctor Completed in 1ms
+34 silly logfile start cleaning logs, removing 1 files
+35 silly logfile done cleaning log files
+36 timing idealTree:init Completed in 70ms
+37 warn old lockfile
+37 warn old lockfile The package-lock.json file was created with an old version of npm,
+37 warn old lockfile so supplemental metadata must be fetched from the registry.
+37 warn old lockfile
+37 warn old lockfile This is a one-time fix-up, please be patient...
+37 warn old lockfile
+38 silly inflate node_modules/accepts
+39 silly inflate node_modules/array-flatten
+40 silly inflate node_modules/base-x
+41 silly inflate node_modules/basic-auth
+42 silly inflate node_modules/bech32
+43 silly inflate node_modules/bindings
+44 silly inflate node_modules/bip32
+45 silly inflate node_modules/bip66
+46 silly inflate node_modules/bitcoin-ops
+47 silly inflate node_modules/bitcoinjs-lib
+48 silly inflate node_modules/bitcoinjs-message
+49 silly inflate node_modules/bn.js
+50 silly inflate node_modules/body-parser
+51 silly inflate node_modules/brorand
+52 silly inflate node_modules/browserify-aes
+53 silly inflate node_modules/bs58
+54 http fetch GET 200 https://registry.npmjs.org/array-flatten 205ms (cache revalidated)
+55 silly inflate node_modules/bs58check
+56 http fetch GET 200 https://registry.npmjs.org/accepts 208ms (cache revalidated)
+57 silly inflate node_modules/buffer-equals
+58 http fetch GET 200 https://registry.npmjs.org/body-parser 205ms (cache revalidated)
+59 silly inflate node_modules/buffer-xor
+60 http fetch GET 200 https://registry.npmjs.org/bech32 216ms (cache updated)
+61 silly inflate node_modules/bytes
+62 http fetch GET 200 https://registry.npmjs.org/basic-auth 217ms (cache miss)
+63 silly inflate node_modules/cipher-base
+64 http fetch GET 200 https://registry.npmjs.org/bs58 216ms (cache updated)
+65 silly inflate node_modules/content-disposition
+66 http fetch GET 200 https://registry.npmjs.org/bindings 222ms (cache updated)
+67 silly inflate node_modules/content-type
+68 http fetch GET 200 https://registry.npmjs.org/browserify-aes 223ms (cache updated)
+69 silly inflate node_modules/cookie
+70 http fetch GET 200 https://registry.npmjs.org/brorand 233ms (cache updated)
+71 silly inflate node_modules/cookie-signature
+72 http fetch GET 200 https://registry.npmjs.org/bn.js 237ms (cache updated)
+73 silly inflate node_modules/create-hash
+74 http fetch GET 200 https://registry.npmjs.org/buffer-xor 52ms (cache updated)
+75 silly inflate node_modules/create-hmac
+76 http fetch GET 200 https://registry.npmjs.org/bytes 51ms (cache revalidated)
+77 silly inflate node_modules/crypto-js
+78 http fetch GET 200 https://registry.npmjs.org/content-disposition 52ms (cache revalidated)
+79 silly inflate node_modules/debug
+80 http fetch GET 200 https://registry.npmjs.org/content-type 53ms (cache revalidated)
+81 silly inflate node_modules/depd
+82 http fetch GET 200 https://registry.npmjs.org/cookie 56ms (cache revalidated)
+83 silly inflate node_modules/destroy
+84 http fetch GET 200 https://registry.npmjs.org/cookie-signature 49ms (cache revalidated)
+85 silly inflate node_modules/drbg.js
+86 http fetch GET 200 https://registry.npmjs.org/cipher-base 81ms (cache updated)
+87 silly inflate node_modules/ee-first
+88 http fetch GET 200 https://registry.npmjs.org/create-hash 63ms (cache updated)
+89 silly inflate node_modules/elliptic
+90 http fetch GET 200 https://registry.npmjs.org/crypto-js 48ms (cache revalidated)
+91 silly inflate node_modules/encodeurl
+92 http fetch GET 200 https://registry.npmjs.org/destroy 37ms (cache revalidated)
+93 silly inflate node_modules/escape-html
+94 http fetch GET 200 https://registry.npmjs.org/depd 53ms (cache revalidated)
+95 silly inflate node_modules/etag
+96 http fetch GET 200 https://registry.npmjs.org/create-hmac 71ms (cache updated)
+97 silly inflate node_modules/evp_bytestokey
+98 http fetch GET 200 https://registry.npmjs.org/ee-first 39ms (cache revalidated)
+99 silly inflate node_modules/express
+100 http fetch GET 200 https://registry.npmjs.org/debug 67ms (cache revalidated)
+101 silly inflate node_modules/file-uri-to-path
+102 http fetch GET 200 https://registry.npmjs.org/encodeurl 42ms (cache revalidated)
+103 silly inflate node_modules/finalhandler
+104 http fetch GET 200 https://registry.npmjs.org/elliptic 62ms (cache updated)
+105 silly inflate node_modules/forwarded
+106 http fetch GET 200 https://registry.npmjs.org/etag 42ms (cache revalidated)
+107 silly inflate node_modules/fresh
+108 http fetch GET 200 https://registry.npmjs.org/express 43ms (cache revalidated)
+109 silly inflate node_modules/hash-base
+110 http fetch GET 200 https://registry.npmjs.org/escape-html 72ms (cache revalidated)
+111 silly inflate node_modules/hash.js
+112 http fetch GET 200 https://registry.npmjs.org/evp_bytestokey 65ms (cache updated)
+113 silly inflate node_modules/hex2ascii
+114 http fetch GET 200 https://registry.npmjs.org/finalhandler 49ms (cache revalidated)
+115 silly inflate node_modules/hmac-drbg
+116 http fetch GET 200 https://registry.npmjs.org/file-uri-to-path 75ms (cache updated)
+117 silly inflate node_modules/http-errors
+118 http fetch GET 200 https://registry.npmjs.org/fresh 43ms (cache revalidated)
+119 silly inflate node_modules/iconv-lite
+120 http fetch GET 200 https://registry.npmjs.org/forwarded 54ms (cache revalidated)
+121 silly inflate node_modules/inherits
+122 http fetch GET 200 https://registry.npmjs.org/bitcoinjs-lib 426ms (cache miss)
+123 silly inflate node_modules/ipaddr.js
+124 http fetch GET 200 https://registry.npmjs.org/hash-base 47ms (cache updated)
+125 silly inflate node_modules/md5.js
+126 http fetch GET 200 https://registry.npmjs.org/inherits 42ms (cache revalidated)
+127 silly inflate node_modules/media-typer
+128 http fetch GET 200 https://registry.npmjs.org/http-errors 53ms (cache revalidated)
+129 silly inflate node_modules/merge-descriptors
+130 http fetch GET 200 https://registry.npmjs.org/iconv-lite 57ms (cache revalidated)
+131 silly inflate node_modules/merkle-lib
+132 http fetch GET 200 https://registry.npmjs.org/hash.js 79ms (cache updated)
+133 silly inflate node_modules/methods
+134 http fetch GET 200 https://registry.npmjs.org/hmac-drbg 69ms (cache updated)
+135 silly inflate node_modules/mime
+136 http fetch GET 200 https://registry.npmjs.org/ipaddr.js 62ms (cache revalidated)
+137 silly inflate node_modules/mime-db
+138 http fetch GET 200 https://registry.npmjs.org/md5.js 65ms (cache updated)
+139 silly inflate node_modules/mime-types
+140 http fetch GET 200 https://registry.npmjs.org/merge-descriptors 41ms (cache revalidated)
+141 silly inflate node_modules/minimalistic-assert
+142 http fetch GET 200 https://registry.npmjs.org/media-typer 45ms (cache revalidated)
+143 silly inflate node_modules/minimalistic-crypto-utils
+144 http fetch GET 200 https://registry.npmjs.org/methods 43ms (cache revalidated)
+145 silly inflate node_modules/morgan
+146 http fetch GET 200 https://registry.npmjs.org/mime 55ms (cache revalidated)
+147 silly inflate node_modules/ms
+148 http fetch GET 200 https://registry.npmjs.org/mime-db 54ms (cache revalidated)
+149 silly inflate node_modules/nan
+150 http fetch GET 200 https://registry.npmjs.org/mime-types 47ms (cache revalidated)
+151 silly inflate node_modules/negotiator
+152 http fetch GET 200 https://registry.npmjs.org/minimalistic-assert 41ms (cache updated)
+153 silly inflate node_modules/on-finished
+154 http fetch GET 200 https://registry.npmjs.org/minimalistic-crypto-utils 54ms (cache updated)
+155 silly inflate node_modules/on-headers
+156 http fetch GET 200 https://registry.npmjs.org/ms 40ms (cache revalidated)
+157 silly inflate node_modules/parseurl
+158 http fetch GET 200 https://registry.npmjs.org/morgan 60ms (cache miss)
+159 silly inflate node_modules/path-to-regexp
+160 http fetch GET 200 https://registry.npmjs.org/on-finished 50ms (cache revalidated)
+161 silly inflate node_modules/proxy-addr
+162 http fetch GET 200 https://registry.npmjs.org/nan 62ms (cache updated)
+163 silly inflate node_modules/pushdata-bitcoin
+164 http fetch GET 200 https://registry.npmjs.org/negotiator 59ms (cache revalidated)
+165 silly inflate node_modules/qs
+166 http fetch GET 200 https://registry.npmjs.org/on-headers 50ms (cache miss)
+167 silly inflate node_modules/randombytes
+168 http fetch GET 200 https://registry.npmjs.org/path-to-regexp 39ms (cache revalidated)
+169 silly inflate node_modules/range-parser
+170 http fetch GET 200 https://registry.npmjs.org/parseurl 60ms (cache revalidated)
+171 silly inflate node_modules/raw-body
+172 http fetch GET 200 https://registry.npmjs.org/proxy-addr 41ms (cache revalidated)
+173 silly inflate node_modules/ripemd160
+174 http fetch GET 200 https://registry.npmjs.org/qs 56ms (cache revalidated)
+175 silly inflate node_modules/safe-buffer
+176 http fetch GET 200 https://registry.npmjs.org/randombytes 52ms (cache updated)
+177 silly inflate node_modules/safer-buffer
+178 http fetch GET 200 https://registry.npmjs.org/range-parser 58ms (cache revalidated)
+179 silly inflate node_modules/secp256k1
+180 http fetch GET 200 https://registry.npmjs.org/raw-body 42ms (cache revalidated)
+181 silly inflate node_modules/send
+182 http fetch GET 200 https://registry.npmjs.org/ripemd160 65ms (cache updated)
+183 silly inflate node_modules/serve-static
+184 http fetch GET 200 https://registry.npmjs.org/safe-buffer 53ms (cache revalidated)
+185 silly inflate node_modules/setprototypeof
+186 http fetch GET 200 https://registry.npmjs.org/safer-buffer 73ms (cache revalidated)
+187 silly inflate node_modules/sha.js
+188 http fetch GET 200 https://registry.npmjs.org/send 72ms (cache revalidated)
+189 silly inflate node_modules/statuses
+190 http fetch GET 200 https://registry.npmjs.org/serve-static 47ms (cache revalidated)
+191 silly inflate node_modules/tiny-secp256k1
+192 http fetch GET 200 https://registry.npmjs.org/setprototypeof 68ms (cache revalidated)
+193 silly inflate node_modules/type-is
+194 http fetch GET 200 https://registry.npmjs.org/statuses 52ms (cache revalidated)
+195 silly inflate node_modules/typeforce
+196 http fetch GET 200 https://registry.npmjs.org/sha.js 70ms (cache updated)
+197 silly inflate node_modules/unpipe
+198 http fetch GET 200 https://registry.npmjs.org/type-is 69ms (cache revalidated)
+199 silly inflate node_modules/utils-merge
+200 http fetch GET 200 https://registry.npmjs.org/unpipe 83ms (cache revalidated)
+201 silly inflate node_modules/varuint-bitcoin
+202 http fetch GET 200 https://registry.npmjs.org/base-x 929ms (cache updated)
+203 silly inflate node_modules/vary
+204 http fetch GET 200 https://registry.npmjs.org/bitcoin-ops 935ms (cache miss)
+205 silly inflate node_modules/wif
+206 http fetch GET 200 https://registry.npmjs.org/utils-merge 78ms (cache revalidated)
+207 http fetch GET 200 https://registry.npmjs.org/vary 48ms (cache revalidated)
+208 http fetch GET 200 https://registry.npmjs.org/bip32 981ms (cache updated)
+209 http fetch GET 200 https://registry.npmjs.org/bitcoinjs-message 986ms (cache miss)
+210 http fetch GET 200 https://registry.npmjs.org/bip66 990ms (cache miss)
+211 http fetch GET 200 https://registry.npmjs.org/buffer-equals 842ms (cache miss)
+212 http fetch GET 200 https://registry.npmjs.org/bs58check 847ms (cache updated)
+213 http fetch GET 200 https://registry.npmjs.org/drbg.js 816ms (cache miss)
+214 http fetch GET 200 https://registry.npmjs.org/merkle-lib 725ms (cache miss)
+215 http fetch GET 200 https://registry.npmjs.org/hex2ascii 817ms (cache miss)
+216 http fetch GET 200 https://registry.npmjs.org/pushdata-bitcoin 772ms (cache miss)
+217 http fetch GET 200 https://registry.npmjs.org/secp256k1 802ms (cache updated)
+218 http fetch GET 200 https://registry.npmjs.org/tiny-secp256k1 819ms (cache revalidated)
+219 http fetch GET 200 https://registry.npmjs.org/typeforce 797ms (cache updated)
+220 http fetch GET 200 https://registry.npmjs.org/wif 771ms (cache updated)
+221 http fetch GET 200 https://registry.npmjs.org/varuint-bitcoin 816ms (cache miss)
+222 timing idealTree:inflate Completed in 1724ms
+223 timing idealTree:userRequests Completed in 0ms
+224 silly idealTree buildDeps
+225 timing idealTree:#root Completed in 0ms
+226 timing idealTree:buildDeps Completed in 1ms
+227 timing idealTree:fixDepFlags Completed in 0ms
+228 timing idealTree Completed in 1799ms
+229 timing reify:loadTrees Completed in 1799ms
+230 timing reify:diffTrees Completed in 2ms
+231 silly reify moves {}
+232 timing reify:retireShallow Completed in 1ms
+233 timing reify:createSparse Completed in 12ms
+234 timing reify:loadBundles Completed in 0ms
+235 silly audit bulk request {
+235 silly audit   accepts: [ '1.3.5' ],
+235 silly audit   'array-flatten': [ '1.1.1' ],
+235 silly audit   'base-x': [ '3.0.5' ],
+235 silly audit   'basic-auth': [ '2.0.1' ],
+235 silly audit   bech32: [ '1.1.3' ],
+235 silly audit   bindings: [ '1.5.0' ],
+235 silly audit   bip32: [ '1.0.2' ],
+235 silly audit   bip66: [ '1.1.5' ],
+235 silly audit   'bitcoin-ops': [ '1.4.1' ],
+235 silly audit   'bitcoinjs-lib': [ '4.0.3' ],
+235 silly audit   'bitcoinjs-message': [ '2.0.0' ],
+235 silly audit   'bn.js': [ '4.11.8' ],
+235 silly audit   'body-parser': [ '1.18.3' ],
+235 silly audit   brorand: [ '1.1.0' ],
+235 silly audit   'browserify-aes': [ '1.2.0' ],
+235 silly audit   bs58: [ '4.0.1' ],
+235 silly audit   bs58check: [ '2.1.2' ],
+235 silly audit   'buffer-equals': [ '1.0.4' ],
+235 silly audit   'buffer-xor': [ '1.0.3' ],
+235 silly audit   bytes: [ '3.0.0' ],
+235 silly audit   'cipher-base': [ '1.0.4' ],
+235 silly audit   'content-disposition': [ '0.5.2' ],
+235 silly audit   'content-type': [ '1.0.4' ],
+235 silly audit   cookie: [ '0.3.1' ],
+235 silly audit   'cookie-signature': [ '1.0.6' ],
+235 silly audit   'create-hash': [ '1.2.0' ],
+235 silly audit   'create-hmac': [ '1.1.7' ],
+235 silly audit   'crypto-js': [ '3.1.9-1' ],
+235 silly audit   debug: [ '2.6.9' ],
+235 silly audit   depd: [ '1.1.2' ],
+235 silly audit   destroy: [ '1.0.4' ],
+235 silly audit   'drbg.js': [ '1.0.1' ],
+235 silly audit   'ee-first': [ '1.1.1' ],
+235 silly audit   elliptic: [ '6.4.1' ],
+235 silly audit   encodeurl: [ '1.0.2' ],
+235 silly audit   'escape-html': [ '1.0.3' ],
+235 silly audit   etag: [ '1.8.1' ],
+235 silly audit   evp_bytestokey: [ '1.0.3' ],
+235 silly audit   express: [ '4.16.4' ],
+235 silly audit   'file-uri-to-path': [ '1.0.0' ],
+235 silly audit   finalhandler: [ '1.1.1' ],
+235 silly audit   forwarded: [ '0.1.2' ],
+235 silly audit   fresh: [ '0.5.2' ],
+235 silly audit   'hash-base': [ '3.0.4' ],
+235 silly audit   'hash.js': [ '1.1.7' ],
+235 silly audit   hex2ascii: [ '0.0.3' ],
+235 silly audit   'hmac-drbg': [ '1.0.1' ],
+235 silly audit   'http-errors': [ '1.6.3' ],
+235 silly audit   'iconv-lite': [ '0.4.23' ],
+235 silly audit   inherits: [ '2.0.3' ],
+235 silly audit   'ipaddr.js': [ '1.8.0' ],
+235 silly audit   'md5.js': [ '1.3.5' ],
+235 silly audit   'media-typer': [ '0.3.0' ],
+235 silly audit   'merge-descriptors': [ '1.0.1' ],
+235 silly audit   'merkle-lib': [ '2.0.10' ],
+235 silly audit   methods: [ '1.1.2' ],
+235 silly audit   mime: [ '1.4.1' ],
+235 silly audit   'mime-db': [ '1.38.0' ],
+235 silly audit   'mime-types': [ '2.1.22' ],
+235 silly audit   'minimalistic-assert': [ '1.0.1' ],
+235 silly audit   'minimalistic-crypto-utils': [ '1.0.1' ],
+235 silly audit   morgan: [ '1.9.1' ],
+235 silly audit   ms: [ '2.0.0' ],
+235 silly audit   nan: [ '2.13.2' ],
+235 silly audit   negotiator: [ '0.6.1' ],
+235 silly audit   'on-finished': [ '2.3.0' ],
+235 silly audit   'on-headers': [ '1.0.2' ],
+235 silly audit   parseurl: [ '1.3.2' ],
+235 silly audit   'path-to-regexp': [ '0.1.7' ],
+235 silly audit   'proxy-addr': [ '2.0.4' ],
+235 silly audit   'pushdata-bitcoin': [ '1.0.1' ],
+235 silly audit   qs: [ '6.5.2' ],
+235 silly audit   randombytes: [ '2.1.0' ],
+235 silly audit   'range-parser': [ '1.2.0' ],
+235 silly audit   'raw-body': [ '2.3.3' ],
+235 silly audit   ripemd160: [ '2.0.2' ],
+235 silly audit   'safe-buffer': [ '5.1.2' ],
+235 silly audit   'safer-buffer': [ '2.1.2' ],
+235 silly audit   secp256k1: [ '3.6.2' ],
+235 silly audit   send: [ '0.16.2' ],
+235 silly audit   'serve-static': [ '1.13.2' ],
+235 silly audit   setprototypeof: [ '1.1.0' ],
+235 silly audit   'sha.js': [ '2.4.11' ],
+235 silly audit   statuses: [ '1.4.0' ],
+235 silly audit   'tiny-secp256k1': [ '1.0.1' ],
+235 silly audit   'type-is': [ '1.6.16' ],
+235 silly audit   typeforce: [ '1.18.0' ],
+235 silly audit   unpipe: [ '1.0.0' ],
+235 silly audit   'utils-merge': [ '1.0.1' ],
+235 silly audit   'varuint-bitcoin': [ '1.1.0' ],
+235 silly audit   vary: [ '1.1.2' ],
+235 silly audit   wif: [ '2.0.6' ]
+235 silly audit }
+236 silly tarball no local data for varuint-bitcoin@https://registry.npmjs.org/varuint-bitcoin/-/varuint-bitcoin-1.1.0.tgz. Extracting by manifest.
+237 silly tarball no local data for utils-merge@https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz. Extracting by manifest.
+238 silly tarball no local data for type-is@https://registry.npmjs.org/type-is/-/type-is-1.6.16.tgz. Extracting by manifest.
+239 silly tarball no local data for wif@https://registry.npmjs.org/wif/-/wif-2.0.6.tgz. Extracting by manifest.
+240 silly tarball no local data for unpipe@https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz. Extracting by manifest.
+241 silly tarball no local data for vary@https://registry.npmjs.org/vary/-/vary-1.1.2.tgz. Extracting by manifest.
+242 silly tarball no local data for tiny-secp256k1@https://registry.npmjs.org/tiny-secp256k1/-/tiny-secp256k1-1.0.1.tgz. Extracting by manifest.
+243 silly tarball no local data for secp256k1@https://registry.npmjs.org/secp256k1/-/secp256k1-3.6.2.tgz. Extracting by manifest.
+244 silly tarball no local data for range-parser@https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz. Extracting by manifest.
+245 silly tarball no local data for qs@https://registry.npmjs.org/qs/-/qs-6.5.2.tgz. Extracting by manifest.
+246 silly tarball no local data for pushdata-bitcoin@https://registry.npmjs.org/pushdata-bitcoin/-/pushdata-bitcoin-1.0.1.tgz. Extracting by manifest.
+247 silly tarball no local data for parseurl@https://registry.npmjs.org/parseurl/-/parseurl-1.3.2.tgz. Extracting by manifest.
+248 silly tarball no local data for path-to-regexp@https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz. Extracting by manifest.
+249 silly tarball no local data for on-finished@https://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz. Extracting by manifest.
+250 silly tarball no local data for negotiator@https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz. Extracting by manifest.
+251 silly tarball no local data for ms@https://registry.npmjs.org/ms/-/ms-2.0.0.tgz. Extracting by manifest.
+252 silly tarball no local data for proxy-addr@https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.4.tgz. Extracting by manifest.
+253 silly tarball no local data for nan@https://registry.npmjs.org/nan/-/nan-2.13.2.tgz. Extracting by manifest.
+254 silly tarball no local data for morgan@https://registry.npmjs.org/morgan/-/morgan-1.9.1.tgz. Extracting by manifest.
+255 silly tarball no local data for on-headers@https://registry.npmjs.org/on-headers/-/on-headers-1.0.2.tgz. Extracting by manifest.
+256 silly tarball no local data for mime-types@https://registry.npmjs.org/mime-types/-/mime-types-2.1.22.tgz. Extracting by manifest.
+257 silly tarball no local data for mime-db@https://registry.npmjs.org/mime-db/-/mime-db-1.38.0.tgz. Extracting by manifest.
+258 silly tarball no local data for methods@https://registry.npmjs.org/methods/-/methods-1.1.2.tgz. Extracting by manifest.
+259 silly tarball no local data for merkle-lib@https://registry.npmjs.org/merkle-lib/-/merkle-lib-2.0.10.tgz. Extracting by manifest.
+260 silly tarball no local data for merge-descriptors@https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.1.tgz. Extracting by manifest.
+261 silly tarball no local data for media-typer@https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz. Extracting by manifest.
+262 silly tarball no local data for ipaddr.js@https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.8.0.tgz. Extracting by manifest.
+263 silly tarball no local data for inherits@https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz. Extracting by manifest.
+264 silly tarball no local data for http-errors@https://registry.npmjs.org/http-errors/-/http-errors-1.6.3.tgz. Extracting by manifest.
+265 silly tarball no local data for hex2ascii@https://registry.npmjs.org/hex2ascii/-/hex2ascii-0.0.3.tgz. Extracting by manifest.
+266 silly tarball no local data for hash-base@https://registry.npmjs.org/hash-base/-/hash-base-3.0.4.tgz. Extracting by manifest.
+267 silly tarball no local data for fresh@https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz. Extracting by manifest.
+268 silly tarball no local data for forwarded@https://registry.npmjs.org/forwarded/-/forwarded-0.1.2.tgz. Extracting by manifest.
+269 silly tarball no local data for finalhandler@https://registry.npmjs.org/finalhandler/-/finalhandler-1.1.1.tgz. Extracting by manifest.
+270 silly tarball no local data for etag@https://registry.npmjs.org/etag/-/etag-1.8.1.tgz. Extracting by manifest.
+271 silly tarball no local data for escape-html@https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz. Extracting by manifest.
+272 silly tarball no local data for encodeurl@https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz. Extracting by manifest.
+273 silly tarball no local data for ee-first@https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz. Extracting by manifest.
+274 silly tarball no local data for elliptic@https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz. Extracting by manifest.
+275 silly tarball no local data for drbg.js@https://registry.npmjs.org/drbg.js/-/drbg.js-1.0.1.tgz. Extracting by manifest.
+276 silly tarball no local data for destroy@https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz. Extracting by manifest.
+277 silly tarball no local data for depd@https://registry.npmjs.org/depd/-/depd-1.1.2.tgz. Extracting by manifest.
+278 silly tarball no local data for express@https://registry.npmjs.org/express/-/express-4.16.4.tgz. Extracting by manifest.
+279 silly tarball no local data for crypto-js@https://registry.npmjs.org/crypto-js/-/crypto-js-3.1.9-1.tgz. Extracting by manifest.
+280 silly tarball no local data for cookie-signature@https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz. Extracting by manifest.
+281 silly tarball no local data for cookie@https://registry.npmjs.org/cookie/-/cookie-0.3.1.tgz. Extracting by manifest.
+282 silly tarball no local data for content-disposition@https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.2.tgz. Extracting by manifest.
+283 silly tarball no local data for buffer-xor@https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.3.tgz. Extracting by manifest.
+284 silly tarball no local data for buffer-equals@https://registry.npmjs.org/buffer-equals/-/buffer-equals-1.0.4.tgz. Extracting by manifest.
+285 silly tarball no local data for bytes@https://registry.npmjs.org/bytes/-/bytes-3.0.0.tgz. Extracting by manifest.
+286 silly tarball no local data for body-parser@https://registry.npmjs.org/body-parser/-/body-parser-1.18.3.tgz. Extracting by manifest.
+287 silly tarball no local data for bitcoinjs-message@https://registry.npmjs.org/bitcoinjs-message/-/bitcoinjs-message-2.0.0.tgz. Extracting by manifest.
+288 silly tarball no local data for bitcoinjs-lib@https://registry.npmjs.org/bitcoinjs-lib/-/bitcoinjs-lib-4.0.3.tgz. Extracting by manifest.
+289 silly tarball no local data for bitcoin-ops@https://registry.npmjs.org/bitcoin-ops/-/bitcoin-ops-1.4.1.tgz. Extracting by manifest.
+290 silly tarball no local data for bip66@https://registry.npmjs.org/bip66/-/bip66-1.1.5.tgz. Extracting by manifest.
+291 silly tarball no local data for bip32@https://registry.npmjs.org/bip32/-/bip32-1.0.2.tgz. Extracting by manifest.
+292 silly tarball no local data for basic-auth@https://registry.npmjs.org/basic-auth/-/basic-auth-2.0.1.tgz. Extracting by manifest.
+293 silly tarball no local data for array-flatten@https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz. Extracting by manifest.
+294 silly tarball no local data for accepts@https://registry.npmjs.org/accepts/-/accepts-1.3.5.tgz. Extracting by manifest.
+295 silly tarball no local data for base-x@https://registry.npmjs.org/base-x/-/base-x-3.0.5.tgz. Extracting by manifest.
+296 silly tarball no local data for bech32@https://registry.npmjs.org/bech32/-/bech32-1.1.3.tgz. Extracting by manifest.
+297 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 314ms
+298 timing auditReport:getReport Completed in 317ms
+299 silly audit report {
+299 silly audit report   elliptic: [
+299 silly audit report     {
+299 silly audit report       id: 1082380,
+299 silly audit report       url: 'https://github.com/advisories/GHSA-r9p9-mrjm-926w',
+299 silly audit report       title: 'Use of a Broken or Risky Cryptographic Algorithm',
+299 silly audit report       severity: 'moderate',
+299 silly audit report       vulnerable_versions: '<6.5.4',
+299 silly audit report       cwe: [Array],
+299 silly audit report       cvss: [Object]
+299 silly audit report     },
+299 silly audit report     {
+299 silly audit report       id: 1069331,
+299 silly audit report       url: 'https://github.com/advisories/GHSA-vh7m-p724-62c2',
+299 silly audit report       title: 'Signature Malleabillity in elliptic',
+299 silly audit report       severity: 'high',
+299 silly audit report       vulnerable_versions: '<6.5.3',
+299 silly audit report       cwe: [Array],
+299 silly audit report       cvss: [Object]
+299 silly audit report     }
+299 silly audit report   ],
+299 silly audit report   express: [
+299 silly audit report     {
+299 silly audit report       id: 1085141,
+299 silly audit report       url: 'https://github.com/advisories/GHSA-hrpp-h998-j3pp',
+299 silly audit report       title: 'qs vulnerable to Prototype Pollution',
+299 silly audit report       severity: 'high',
+299 silly audit report       vulnerable_versions: '<4.17.3',
+299 silly audit report       cwe: [Array],
+299 silly audit report       cvss: [Object]
+299 silly audit report     }
+299 silly audit report   ],
+299 silly audit report   qs: [
+299 silly audit report     {
+299 silly audit report       id: 1085135,
+299 silly audit report       url: 'https://github.com/advisories/GHSA-hrpp-h998-j3pp',
+299 silly audit report       title: 'qs vulnerable to Prototype Pollution',
+299 silly audit report       severity: 'high',
+299 silly audit report       vulnerable_versions: '>=6.5.0 <6.5.3',
+299 silly audit report       cwe: [Array],
+299 silly audit report       cvss: [Object]
+299 silly audit report     }
+299 silly audit report   ]
+299 silly audit report }
+300 timing metavuln:packument:elliptic Completed in 1ms
+301 timing metavuln:packument:express Completed in 0ms
+302 timing metavuln:packument:qs Completed in 0ms
+303 timing metavuln:cache:get:security-advisory:elliptic:BAIknZ61nmZkb8DTKR8QdDvwZfXBtMh1m2q8yp4EPrnV0OPaCh4VMBuqt4Sb2HIdP8gb6P4lBx6zV93S6Scn7w== Completed in 23ms
+304 timing metavuln:load:security-advisory:elliptic:1082380 Completed in 2ms
+305 timing metavuln:cache:get:security-advisory:qs:rWY8FV+j/NIeDGpuc35mOpnEAnjLz2h9Ou9SzojE+VEnkIJT1HjUSIlZruVRRoB4ovTTv5P7E8dPAg4Au60VPg== Completed in 25ms
+306 timing metavuln:load:security-advisory:qs:1085135 Completed in 3ms
+307 timing metavuln:cache:get:security-advisory:express:cu8dGVlPLmNDZacdM1VJ4SmP099XPxd9D6dH6mtHRwoG5ztKsy9vaP/sCmcnnpTDmfplL0RuhHYr75iR4HwmcA== Completed in 28ms
+308 timing metavuln:load:security-advisory:express:1085141 Completed in 11ms
+309 timing metavuln:cache:get:security-advisory:elliptic:a0B4stOLm+cFFUbGeKJTWXFpdHKJVs1xPQ8NJbXQZsyEr/68eFhQ/CvAX6C1eERyxA9aPxjKy3WUxDkeKvYPvg== Completed in 40ms
+310 timing metavuln:load:security-advisory:elliptic:1069331 Completed in 2ms
+311 timing reifyNode:node_modules/md5.js Completed in 414ms
+312 timing reifyNode:node_modules/minimalistic-assert Completed in 415ms
+313 timing reifyNode:node_modules/evp_bytestokey Completed in 416ms
+314 timing reifyNode:node_modules/bs58 Completed in 414ms
+315 timing reifyNode:node_modules/bindings Completed in 417ms
+316 timing reifyNode:node_modules/setprototypeof Completed in 429ms
+317 timing reifyNode:node_modules/ripemd160 Completed in 428ms
+318 timing reifyNode:node_modules/content-type Completed in 428ms
+319 timing reifyNode:node_modules/bs58check Completed in 427ms
+320 timing reifyNode:node_modules/statuses Completed in 438ms
+321 timing reifyNode:node_modules/create-hmac Completed in 435ms
+322 timing reifyNode:node_modules/brorand Completed in 434ms
+323 timing reifyNode:node_modules/serve-static Completed in 443ms
+324 timing reifyNode:node_modules/safe-buffer Completed in 442ms
+325 timing reifyNode:node_modules/randombytes Completed in 448ms
+326 timing reifyNode:node_modules/raw-body Completed in 449ms
+327 timing reifyNode:node_modules/send Completed in 450ms
+328 timing reifyNode:node_modules/minimalistic-crypto-utils Completed in 449ms
+329 timing reifyNode:node_modules/cipher-base Completed in 448ms
+330 timing reifyNode:node_modules/create-hash Completed in 449ms
+331 timing reifyNode:node_modules/safer-buffer Completed in 465ms
+332 timing reifyNode:node_modules/typeforce Completed in 472ms
+333 timing reifyNode:node_modules/mime Completed in 470ms
+334 timing reifyNode:node_modules/hmac-drbg Completed in 471ms
+335 timing reifyNode:node_modules/file-uri-to-path Completed in 471ms
+336 http fetch GET 200 https://registry.npmjs.org/type-is/-/type-is-1.6.16.tgz 476ms (cache miss)
+337 timing reifyNode:node_modules/type-is Completed in 514ms
+338 http fetch GET 200 https://registry.npmjs.org/pushdata-bitcoin/-/pushdata-bitcoin-1.0.1.tgz 450ms (cache miss)
+339 timing reifyNode:node_modules/pushdata-bitcoin Completed in 517ms
+340 timing metavuln:cache:put:security-advisory:elliptic:BAIknZ61nmZkb8DTKR8QdDvwZfXBtMh1m2q8yp4EPrnV0OPaCh4VMBuqt4Sb2HIdP8gb6P4lBx6zV93S6Scn7w== Completed in 183ms
+341 timing metavuln:calculate:security-advisory:elliptic:1082380 Completed in 208ms
+342 timing metavuln:cache:put:security-advisory:qs:rWY8FV+j/NIeDGpuc35mOpnEAnjLz2h9Ou9SzojE+VEnkIJT1HjUSIlZruVRRoB4ovTTv5P7E8dPAg4Au60VPg== Completed in 179ms
+343 timing metavuln:calculate:security-advisory:qs:1085135 Completed in 208ms
+344 http fetch GET 200 https://registry.npmjs.org/morgan/-/morgan-1.9.1.tgz 430ms (cache miss)
+345 timing reifyNode:node_modules/morgan Completed in 522ms
+346 timing metavuln:cache:put:security-advisory:express:cu8dGVlPLmNDZacdM1VJ4SmP099XPxd9D6dH6mtHRwoG5ztKsy9vaP/sCmcnnpTDmfplL0RuhHYr75iR4HwmcA== Completed in 171ms
+347 timing metavuln:calculate:security-advisory:express:1085141 Completed in 210ms
+348 timing metavuln:cache:put:security-advisory:elliptic:a0B4stOLm+cFFUbGeKJTWXFpdHKJVs1xPQ8NJbXQZsyEr/68eFhQ/CvAX6C1eERyxA9aPxjKy3WUxDkeKvYPvg== Completed in 168ms
+349 timing metavuln:calculate:security-advisory:elliptic:1069331 Completed in 211ms
+350 timing metavuln:packument:secp256k1 Completed in 0ms
+351 timing metavuln:packument:tiny-secp256k1 Completed in 0ms
+352 http fetch GET 200 https://registry.npmjs.org/on-headers/-/on-headers-1.0.2.tgz 431ms (cache miss)
+353 timing reifyNode:node_modules/on-headers Completed in 526ms
+354 http fetch GET 200 https://registry.npmjs.org/forwarded/-/forwarded-0.1.2.tgz 398ms (cache miss)
+355 timing reifyNode:node_modules/forwarded Completed in 535ms
+356 timing metavuln:cache:get:security-advisory:tiny-secp256k1:LPuKg2kIF859/2zZG821UldJ5AssxqLKdIsKdCXZLexxExnDucbYLmvkV9/rPXew+XnPDBgvjRd+hIXU5lGA5w== Completed in 15ms
+357 timing metavuln:load:security-advisory:tiny-secp256k1:BAIknZ61nmZkb8DTKR8QdDvwZfXBtMh1m2q8yp4EPrnV0OPaCh4VMBuqt4Sb2HIdP8gb6P4lBx6zV93S6Scn7w== Completed in 2ms
+358 timing metavuln:cache:get:security-advisory:secp256k1:QBS5G86sUc1Jb+HI1Bg611DZ1euLnyaDN1qjVKBdXBFwC5kfaEhY0ka8BhXX0/kkCL+fqhs+M4y1mTabDMZS7w== Completed in 17ms
+359 timing metavuln:load:security-advisory:secp256k1:BAIknZ61nmZkb8DTKR8QdDvwZfXBtMh1m2q8yp4EPrnV0OPaCh4VMBuqt4Sb2HIdP8gb6P4lBx6zV93S6Scn7w== Completed in 5ms
+360 timing reifyNode:node_modules/bn.js Completed in 552ms
+361 http fetch GET 200 https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.4.tgz 472ms (cache miss)
+362 timing reifyNode:node_modules/proxy-addr Completed in 559ms
+363 http fetch GET 200 https://registry.npmjs.org/mime-types/-/mime-types-2.1.22.tgz 463ms (cache miss)
+364 timing reifyNode:node_modules/mime-types Completed in 561ms
+365 http fetch GET 200 https://registry.npmjs.org/merkle-lib/-/merkle-lib-2.0.10.tgz 455ms (cache miss)
+366 timing reifyNode:node_modules/merkle-lib Completed in 563ms
+367 http fetch GET 200 https://registry.npmjs.org/hash-base/-/hash-base-3.0.4.tgz 434ms (cache miss)
+368 timing reifyNode:node_modules/hash-base Completed in 566ms
+369 timing reifyNode:node_modules/sha.js Completed in 573ms
+370 http fetch GET 200 https://registry.npmjs.org/drbg.js/-/drbg.js-1.0.1.tgz 414ms (cache miss)
+371 timing reifyNode:node_modules/drbg.js Completed in 574ms
+372 http fetch GET 200 https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.8.0.tgz 463ms (cache miss)
+373 timing reifyNode:node_modules/ipaddr.js Completed in 582ms
+374 http fetch GET 200 https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.2.tgz 397ms (cache miss)
+375 timing reifyNode:node_modules/content-disposition Completed in 589ms
+376 http fetch GET 200 https://registry.npmjs.org/finalhandler/-/finalhandler-1.1.1.tgz 456ms (cache miss)
+377 timing reifyNode:node_modules/finalhandler Completed in 596ms
+378 http fetch GET 200 https://registry.npmjs.org/buffer-equals/-/buffer-equals-1.0.4.tgz 399ms (cache miss)
+379 timing reifyNode:node_modules/buffer-equals Completed in 602ms
+380 timing reifyNode:node_modules/debug Completed in 603ms
+381 http fetch GET 200 https://registry.npmjs.org/bitcoin-ops/-/bitcoin-ops-1.4.1.tgz 379ms (cache miss)
+382 timing reifyNode:node_modules/bitcoin-ops Completed in 608ms
+383 http fetch GET 200 https://registry.npmjs.org/bip66/-/bip66-1.1.5.tgz 383ms (cache miss)
+384 timing reifyNode:node_modules/bip66 Completed in 615ms
+385 timing reifyNode:node_modules/browserify-aes Completed in 622ms
+386 http fetch GET 200 https://registry.npmjs.org/bech32/-/bech32-1.1.3.tgz 387ms (cache miss)
+387 timing reifyNode:node_modules/bech32 Completed in 631ms
+388 http fetch GET 200 https://registry.npmjs.org/body-parser/-/body-parser-1.18.3.tgz 427ms (cache miss)
+389 http fetch GET 200 https://registry.npmjs.org/basic-auth/-/basic-auth-2.0.1.tgz 406ms (cache miss)
+390 timing reifyNode:node_modules/basic-auth Completed in 642ms
+391 timing reifyNode:node_modules/hash.js Completed in 650ms
+392 timing reifyNode:node_modules/body-parser Completed in 654ms
+393 http fetch GET 200 https://registry.npmjs.org/vary/-/vary-1.1.2.tgz 616ms (cache miss)
+394 timing reifyNode:node_modules/vary Completed in 665ms
+395 http fetch GET 200 https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz 598ms (cache miss)
+396 timing reifyNode:node_modules/path-to-regexp Completed in 669ms
+397 http fetch GET 200 https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz 636ms (cache miss)
+398 timing reifyNode:node_modules/unpipe Completed in 681ms
+399 http fetch GET 200 https://registry.npmjs.org/methods/-/methods-1.1.2.tgz 575ms (cache miss)
+400 timing reifyNode:node_modules/methods Completed in 680ms
+401 timing metavuln:cache:put:security-advisory:secp256k1:QBS5G86sUc1Jb+HI1Bg611DZ1euLnyaDN1qjVKBdXBFwC5kfaEhY0ka8BhXX0/kkCL+fqhs+M4y1mTabDMZS7w== Completed in 136ms
+402 timing metavuln:calculate:security-advisory:secp256k1:BAIknZ61nmZkb8DTKR8QdDvwZfXBtMh1m2q8yp4EPrnV0OPaCh4VMBuqt4Sb2HIdP8gb6P4lBx6zV93S6Scn7w== Completed in 158ms
+403 timing metavuln:cache:put:security-advisory:tiny-secp256k1:LPuKg2kIF859/2zZG821UldJ5AssxqLKdIsKdCXZLexxExnDucbYLmvkV9/rPXew+XnPDBgvjRd+hIXU5lGA5w== Completed in 141ms
+404 timing metavuln:calculate:security-advisory:tiny-secp256k1:BAIknZ61nmZkb8DTKR8QdDvwZfXBtMh1m2q8yp4EPrnV0OPaCh4VMBuqt4Sb2HIdP8gb6P4lBx6zV93S6Scn7w== Completed in 158ms
+405 timing metavuln:packument:body-parser Completed in 1ms
+406 http fetch GET 200 https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz 652ms (cache miss)
+407 timing reifyNode:node_modules/utils-merge Completed in 688ms
+408 http fetch GET 200 https://registry.npmjs.org/wif/-/wif-2.0.6.tgz 650ms (cache miss)
+409 timing reifyNode:node_modules/wif Completed in 691ms
+410 http fetch GET 200 https://registry.npmjs.org/mime-db/-/mime-db-1.38.0.tgz 597ms (cache miss)
+411 timing reifyNode:node_modules/mime-db Completed in 696ms
+412 timing metavuln:cache:get:security-advisory:body-parser:/ToyanuGoRYRStUThZRc4yQbDqEgiD6o+Khymy3rvfv8yAIFMyKtGDtLMKQxuBMveCnOT/KVC0H0jB0nm8eOTA== Completed in 15ms
+413 timing metavuln:load:security-advisory:body-parser:rWY8FV+j/NIeDGpuc35mOpnEAnjLz2h9Ou9SzojE+VEnkIJT1HjUSIlZruVRRoB4ovTTv5P7E8dPAg4Au60VPg== Completed in 14ms
+414 timing metavuln:cache:get:security-advisory:express:S7TzUoidFlsPSewIqlZasnkKifuFTNIsfjM9OFDI9ApCl3Z/noaIkXZp2APY68zRaBysx6xVKWz+44MpZ+vMCg== Completed in 30ms
+415 timing metavuln:load:security-advisory:express:rWY8FV+j/NIeDGpuc35mOpnEAnjLz2h9Ou9SzojE+VEnkIJT1HjUSIlZruVRRoB4ovTTv5P7E8dPAg4Au60VPg== Completed in 12ms
+416 http fetch GET 200 https://registry.npmjs.org/parseurl/-/parseurl-1.3.2.tgz 664ms (cache miss)
+417 timing reifyNode:node_modules/parseurl Completed in 732ms
+418 http fetch GET 200 https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.1.tgz 631ms (cache miss)
+419 timing reifyNode:node_modules/merge-descriptors Completed in 741ms
+420 http fetch GET 200 https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz 694ms (cache miss)
+421 timing reifyNode:node_modules/range-parser Completed in 755ms
+422 http fetch GET 200 https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz 634ms (cache miss)
+423 timing reifyNode:node_modules/inherits Completed in 756ms
+424 http fetch GET 200 https://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz 684ms (cache miss)
+425 timing reifyNode:node_modules/on-finished Completed in 760ms
+426 http fetch GET 200 https://registry.npmjs.org/qs/-/qs-6.5.2.tgz 701ms (cache miss)
+427 timing reifyNode:node_modules/qs Completed in 764ms
+428 http fetch GET 200 https://registry.npmjs.org/etag/-/etag-1.8.1.tgz 623ms (cache miss)
+429 timing reifyNode:node_modules/etag Completed in 767ms
+430 http fetch GET 200 https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz 639ms (cache miss)
+431 timing reifyNode:node_modules/fresh Completed in 773ms
+432 http fetch GET 200 https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz 661ms (cache miss)
+433 timing reifyNode:node_modules/media-typer Completed in 778ms
+434 http fetch GET 200 https://registry.npmjs.org/ms/-/ms-2.0.0.tgz 706ms (cache miss)
+435 timing reifyNode:node_modules/ms Completed in 786ms
+436 http fetch GET 200 https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz 712ms (cache miss)
+437 timing reifyNode:node_modules/negotiator Completed in 791ms
+438 http fetch GET 200 https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz 642ms (cache miss)
+439 timing reifyNode:node_modules/ee-first Completed in 793ms
+440 http fetch GET 200 https://registry.npmjs.org/http-errors/-/http-errors-1.6.3.tgz 674ms (cache miss)
+441 timing reifyNode:node_modules/http-errors Completed in 799ms
+442 http fetch GET 200 https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz 659ms (cache miss)
+443 timing reifyNode:node_modules/escape-html Completed in 806ms
+444 http fetch GET 200 https://registry.npmjs.org/cookie/-/cookie-0.3.1.tgz 621ms (cache miss)
+445 timing reifyNode:node_modules/cookie Completed in 808ms
+446 http fetch GET 200 https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz 649ms (cache miss)
+447 timing reifyNode:node_modules/destroy Completed in 811ms
+448 http fetch GET 200 https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz 661ms (cache miss)
+449 timing reifyNode:node_modules/elliptic Completed in 818ms
+450 http fetch GET 200 https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz 637ms (cache miss)
+451 timing reifyNode:node_modules/cookie-signature Completed in 821ms
+452 http fetch GET 200 https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.3.tgz 623ms (cache miss)
+453 timing reifyNode:node_modules/buffer-xor Completed in 823ms
+454 timing metavuln:cache:put:security-advisory:express:S7TzUoidFlsPSewIqlZasnkKifuFTNIsfjM9OFDI9ApCl3Z/noaIkXZp2APY68zRaBysx6xVKWz+44MpZ+vMCg== Completed in 101ms
+455 timing metavuln:calculate:security-advisory:express:rWY8FV+j/NIeDGpuc35mOpnEAnjLz2h9Ou9SzojE+VEnkIJT1HjUSIlZruVRRoB4ovTTv5P7E8dPAg4Au60VPg== Completed in 143ms
+456 timing metavuln:cache:put:security-advisory:body-parser:/ToyanuGoRYRStUThZRc4yQbDqEgiD6o+Khymy3rvfv8yAIFMyKtGDtLMKQxuBMveCnOT/KVC0H0jB0nm8eOTA== Completed in 114ms
+457 timing metavuln:calculate:security-advisory:body-parser:rWY8FV+j/NIeDGpuc35mOpnEAnjLz2h9Ou9SzojE+VEnkIJT1HjUSIlZruVRRoB4ovTTv5P7E8dPAg4Au60VPg== Completed in 144ms
+458 http fetch GET 200 https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz 589ms (cache miss)
+459 timing reifyNode:node_modules/array-flatten Completed in 827ms
+460 http fetch GET 200 https://registry.npmjs.org/depd/-/depd-1.1.2.tgz 670ms (cache miss)
+461 timing metavuln:cache:get:security-advisory:express:GwiHstYz/EfovFqD5eCOUu17/J1tGnvhhrkpfPxuJ5DjffByTI2WlmYawLIZVDLd6qahtJp3Aw4qq/A6J1W0Mw== Completed in 10ms
+462 timing metavuln:load:security-advisory:express:/ToyanuGoRYRStUThZRc4yQbDqEgiD6o+Khymy3rvfv8yAIFMyKtGDtLMKQxuBMveCnOT/KVC0H0jB0nm8eOTA== Completed in 10ms
+463 http fetch GET 200 https://registry.npmjs.org/bytes/-/bytes-3.0.0.tgz 645ms (cache miss)
+464 timing reifyNode:node_modules/bytes Completed in 853ms
+465 http fetch GET 200 https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz 706ms (cache miss)
+466 timing reifyNode:node_modules/encodeurl Completed in 856ms
+467 timing reifyNode:node_modules/depd Completed in 856ms
+468 timing reifyNode:node_modules/iconv-lite Completed in 859ms
+469 http fetch GET 200 https://registry.npmjs.org/accepts/-/accepts-1.3.5.tgz 620ms (cache miss)
+470 timing reifyNode:node_modules/accepts Completed in 860ms
+471 timing metavuln:cache:put:security-advisory:express:GwiHstYz/EfovFqD5eCOUu17/J1tGnvhhrkpfPxuJ5DjffByTI2WlmYawLIZVDLd6qahtJp3Aw4qq/A6J1W0Mw== Completed in 21ms
+472 timing metavuln:calculate:security-advisory:express:/ToyanuGoRYRStUThZRc4yQbDqEgiD6o+Khymy3rvfv8yAIFMyKtGDtLMKQxuBMveCnOT/KVC0H0jB0nm8eOTA== Completed in 43ms
+473 timing auditReport:init Completed in 559ms
+474 timing reify:audit Completed in 877ms
+475 http fetch GET 200 https://registry.npmjs.org/express/-/express-4.16.4.tgz 699ms (cache miss)
+476 timing reifyNode:node_modules/express Completed in 872ms
+477 http fetch GET 200 https://registry.npmjs.org/nan/-/nan-2.13.2.tgz 798ms (cache miss)
+478 timing reifyNode:node_modules/nan Completed in 888ms
+479 http fetch GET 200 https://registry.npmjs.org/crypto-js/-/crypto-js-3.1.9-1.tgz 713ms (cache miss)
+480 timing reifyNode:node_modules/crypto-js Completed in 892ms
+481 http fetch GET 200 https://registry.npmjs.org/bitcoinjs-lib/-/bitcoinjs-lib-4.0.3.tgz 685ms (cache miss)
+482 timing reifyNode:node_modules/bitcoinjs-lib Completed in 908ms
+483 http fetch GET 200 https://registry.npmjs.org/secp256k1/-/secp256k1-3.6.2.tgz 1034ms (cache miss)
+484 timing reifyNode:node_modules/secp256k1 Completed in 1093ms
+485 http fetch GET 200 https://registry.npmjs.org/varuint-bitcoin/-/varuint-bitcoin-1.1.0.tgz 1068ms (cache miss)
+486 timing reifyNode:node_modules/varuint-bitcoin Completed in 1102ms
+487 http fetch GET 200 https://registry.npmjs.org/hex2ascii/-/hex2ascii-0.0.3.tgz 975ms (cache miss)
+488 timing reifyNode:node_modules/hex2ascii Completed in 1102ms
+489 http fetch GET 200 https://registry.npmjs.org/bip32/-/bip32-1.0.2.tgz 929ms (cache miss)
+490 timing reifyNode:node_modules/bip32 Completed in 1163ms
+491 http fetch GET 200 https://registry.npmjs.org/bitcoinjs-message/-/bitcoinjs-message-2.0.0.tgz 952ms (cache miss)
+492 timing reifyNode:node_modules/bitcoinjs-message Completed in 1171ms
+493 http fetch GET 200 https://registry.npmjs.org/base-x/-/base-x-3.0.5.tgz 942ms (cache miss)
+494 timing reifyNode:node_modules/base-x Completed in 1184ms
+495 http fetch GET 200 https://registry.npmjs.org/tiny-secp256k1/-/tiny-secp256k1-1.0.1.tgz 1729ms (cache miss)
+496 timing reifyNode:node_modules/tiny-secp256k1 Completed in 1780ms
+497 timing reify:unpack Completed in 1781ms
+498 timing reify:unretire Completed in 0ms
+499 timing build:queue Completed in 2ms
+500 timing build:link:node_modules/sha.js Completed in 1ms
+501 timing build:link:node_modules/mime Completed in 2ms
+502 timing build:link Completed in 2ms
+503 info run secp256k1@3.6.2 install node_modules/secp256k1 npm run rebuild || echo "Secp256k1 bindings compilation fail. Pure JS implementation will be used."
+504 info run tiny-secp256k1@1.0.1 install node_modules/tiny-secp256k1 node-gyp rebuild
+505 info run tiny-secp256k1@1.0.1 install { code: 1, signal: null }
+506 timing reify:rollback:createSparse Completed in 98ms
+507 timing reify:rollback:retireShallow Completed in 0ms
+508 timing command:install Completed in 6246ms
+509 verbose stack Error: command failed
+509 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:63:27)
+509 verbose stack     at ChildProcess.emit (node:events:520:28)
+509 verbose stack     at maybeClose (node:internal/child_process:1092:16)
+509 verbose stack     at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)
+510 verbose pkgid tiny-secp256k1@1.0.1
+511 verbose cwd /Users/kirqz/repos/blockchain-dev-nd/blockchain_fundamentals/project_1
+512 verbose Darwin 21.6.0
+513 verbose node v16.14.0
+514 verbose npm  v8.11.0
+515 error code 1
+516 error path /Users/kirqz/repos/blockchain-dev-nd/blockchain_fundamentals/project_1/node_modules/tiny-secp256k1
+517 error command failed
+518 error command sh -c node-gyp rebuild
+519 error CXX(target) Release/obj.target/secp256k1/native/addon.o
+520 error gyp info it worked if it ends with ok
+520 error gyp info using node-gyp@9.0.0
+520 error gyp info using node@16.14.0 | darwin | x64
+520 error gyp info find Python using Python version 3.10.0 found at "/Users/kirqz/.pyenv/versions/3.10.0/bin/python3"
+520 error gyp info spawn /Users/kirqz/.pyenv/versions/3.10.0/bin/python3
+520 error gyp info spawn args [
+520 error gyp info spawn args   '/usr/local/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+520 error gyp info spawn args   'binding.gyp',
+520 error gyp info spawn args   '-f',
+520 error gyp info spawn args   'make',
+520 error gyp info spawn args   '-I',
+520 error gyp info spawn args   '/Users/kirqz/repos/blockchain-dev-nd/blockchain_fundamentals/project_1/node_modules/tiny-secp256k1/build/config.gypi',
+520 error gyp info spawn args   '-I',
+520 error gyp info spawn args   '/usr/local/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+520 error gyp info spawn args   '-I',
+520 error gyp info spawn args   '/Users/kirqz/Library/Caches/node-gyp/16.14.0/include/node/common.gypi',
+520 error gyp info spawn args   '-Dlibrary=shared_library',
+520 error gyp info spawn args   '-Dvisibility=default',
+520 error gyp info spawn args   '-Dnode_root_dir=/Users/kirqz/Library/Caches/node-gyp/16.14.0',
+520 error gyp info spawn args   '-Dnode_gyp_dir=/usr/local/lib/node_modules/npm/node_modules/node-gyp',
+520 error gyp info spawn args   '-Dnode_lib_file=/Users/kirqz/Library/Caches/node-gyp/16.14.0/<(target_arch)/node.lib',
+520 error gyp info spawn args   '-Dmodule_root_dir=/Users/kirqz/repos/blockchain-dev-nd/blockchain_fundamentals/project_1/node_modules/tiny-secp256k1',
+520 error gyp info spawn args   '-Dnode_engine=v8',
+520 error gyp info spawn args   '--depth=.',
+520 error gyp info spawn args   '--no-parallel',
+520 error gyp info spawn args   '--generator-output',
+520 error gyp info spawn args   'build',
+520 error gyp info spawn args   '-Goutput_dir=.'
+520 error gyp info spawn args ]
+520 error gyp info spawn make
+520 error gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+520 error In file included from ../native/addon.cpp:4:
+520 error In file included from ../../nan/nan.h:2818:
+520 error ../../nan/nan_typedarray_contents.h:34:43: warning: 'GetContents' is deprecated: Use GetBackingStore. See http://crbug.com/v8/9908. [-Wdeprecated-declarations]
+520 error       data   = static_cast<char*>(buffer->GetContents().Data()) + byte_offset;
+520 error                                           ^
+520 error /Users/kirqz/Library/Caches/node-gyp/16.14.0/include/node/v8.h:5614:3: note: 'GetContents' has been explicitly marked deprecated here
+520 error   V8_DEPRECATED("Use GetBackingStore. See http://crbug.com/v8/9908.")
+520 error   ^
+520 error /Users/kirqz/Library/Caches/node-gyp/16.14.0/include/node/v8config.h:454:35: note: expanded from macro 'V8_DEPRECATED'
+520 error # define V8_DEPRECATED(message) [[deprecated(message)]]
+520 error                                   ^
+520 error ../native/addon.cpp:239:2: warning: ignoring return value of function declared with 'warn_unused_result' attribute [-Wunused-result]
+520 error         secp256k1_ec_privkey_negate(context, tweak_negated); // returns 1 always
+520 error         ^~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
+520 error ../native/addon.cpp:284:34: error: too few arguments to function call, single argument 'isolate' was not specified
+520 error                 strict = info[3]->BooleanValue();
+520 error                          ~~~~~~~~~~~~~~~~~~~~~ ^
+520 error /Users/kirqz/Library/Caches/node-gyp/16.14.0/include/node/v8.h:3096:8: note: 'BooleanValue' declared here
+520 error   bool BooleanValue(Isolate* isolate) const;
+520 error        ^
+520 error ../native/addon.cpp:81:36: error: too few arguments to function call, single argument 'isolate' was not specified
+520 error                 return info[index]->BooleanValue() ? SECP256K1_EC_COMPRESSED : SECP256K1_EC_UNCOMPRESSED;
+520 error                        ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+520 error ../native/addon.cpp:141:21: note: in instantiation of function template specialization '(anonymous namespace)::assumeCompression<2UL, Nan::FunctionCallbackInfo<v8::Value>, v8::Local<v8::Object>>' requested here
+520 error         const auto flags = assumeCompression<2>(info, pA);
+520 error                            ^
+520 error /Users/kirqz/Library/Caches/node-gyp/16.14.0/include/node/v8.h:3096:8: note: 'BooleanValue' declared here
+520 error   bool BooleanValue(Isolate* isolate) const;
+520 error        ^
+520 error ../native/addon.cpp:79:21: warning: comparison of integers of different signs: 'int' and 'unsigned long' [-Wsign-compare]
+520 error                 if (info.Length() <= index) return __isPointCompressed(p) ? SECP256K1_EC_COMPRESSED : SECP256K1_EC_UNCOMPRESSED;
+520 error                     ~~~~~~~~~~~~~ ^  ~~~~~
+520 error ../native/addon.cpp:81:36: error: too few arguments to function call, single argument 'isolate' was not specified
+520 error                 return info[index]->BooleanValue() ? SECP256K1_EC_COMPRESSED : SECP256K1_EC_UNCOMPRESSED;
+520 error                        ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+520 error ../native/addon.cpp:173:21: note: in instantiation of function template specialization '(anonymous namespace)::assumeCompression<1UL, Nan::FunctionCallbackInfo<v8::Value>, v8::Local<v8::Object>>' requested here
+520 error         const auto flags = assumeCompression<1>(info, p);
+520 error                            ^
+520 error /Users/kirqz/Library/Caches/node-gyp/16.14.0/include/node/v8.h:3096:8: note: 'BooleanValue' declared here
+520 error   bool BooleanValue(Isolate* isolate) const;
+520 error        ^
+520 error ../native/addon.cpp:79:21: warning: comparison of integers of different signs: 'int' and 'unsigned long' [-Wsign-compare]
+520 error                 if (info.Length() <= index) return __isPointCompressed(p) ? SECP256K1_EC_COMPRESSED : SECP256K1_EC_UNCOMPRESSED;
+520 error                     ~~~~~~~~~~~~~ ^  ~~~~~
+520 error ../native/addon.cpp:88:36: error: too few arguments to function call, single argument 'isolate' was not specified
+520 error                 return info[index]->BooleanValue() ? SECP256K1_EC_COMPRESSED : SECP256K1_EC_UNCOMPRESSED;
+520 error                        ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+520 error ../native/addon.cpp:188:21: note: in instantiation of function template specialization '(anonymous namespace)::assumeCompression<1UL, Nan::FunctionCallbackInfo<v8::Value>>' requested here
+520 error         const auto flags = assumeCompression<1>(info);
+520 error                            ^
+520 error /Users/kirqz/Library/Caches/node-gyp/16.14.0/include/node/v8.h:3096:8: note: 'BooleanValue' declared here
+520 error   bool BooleanValue(Isolate* isolate) const;
+520 error        ^
+520 error ../native/addon.cpp:86:21: warning: comparison of integers of different signs: 'int' and 'unsigned long' [-Wsign-compare]
+520 error                 if (info.Length() <= index) return SECP256K1_EC_COMPRESSED;
+520 error                     ~~~~~~~~~~~~~ ^  ~~~~~
+520 error 5 warnings and 4 errors generated.
+520 error make: *** [Release/obj.target/secp256k1/native/addon.o] Error 1
+520 error gyp ERR! build error 
+520 error gyp ERR! stack Error: `make` failed with exit code: 2
+520 error gyp ERR! stack     at ChildProcess.onExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+520 error gyp ERR! stack     at ChildProcess.emit (node:events:520:28)
+520 error gyp ERR! stack     at Process.ChildProcess._handle.onexit (node:internal/child_process:291:12)
+520 error gyp ERR! System Darwin 21.6.0
+520 error gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+520 error gyp ERR! cwd /Users/kirqz/repos/blockchain-dev-nd/blockchain_fundamentals/project_1/node_modules/tiny-secp256k1
+520 error gyp ERR! node -v v16.14.0
+520 error gyp ERR! node-gyp -v v9.0.0
+520 error gyp ERR! not ok
+521 verbose exit 1
+522 timing npm Completed in 6424ms
+523 verbose unfinished npm timer reify 1672688124430
+524 verbose unfinished npm timer reify:build 1672688128041
+525 verbose unfinished npm timer build 1672688128041
+526 verbose unfinished npm timer build:deps 1672688128041
+527 verbose unfinished npm timer build:run:install 1672688128046
+528 verbose unfinished npm timer build:run:install:node_modules/secp256k1 1672688128046
+529 verbose unfinished npm timer build:run:install:node_modules/tiny-secp256k1 1672688128061
+530 verbose code 1
+531 error A complete log of this run can be found in:
+531 error     /Users/kirqz/.npm/_logs/2023-01-02T19_35_24_263Z-debug-0.log
