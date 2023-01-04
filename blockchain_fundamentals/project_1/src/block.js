@@ -10,6 +10,7 @@
  */
 
 const SHA256 = require('crypto-js/sha256');
+const e = require('express');
 const hex2ascii = require('hex2ascii');
 
 class Block {
@@ -67,16 +68,15 @@ class Block {
         // Decoding the data to retrieve the JSON representation of the object
         // Parse the data to an object to be retrieve.
         let self = this;
-        promise = new Promise (function (resolve, reject) {
-            let dataDecoded = JSON.parse(hex2ascii(data));
+        return new Promise ((resolve, reject) => {
+            let dataDecoded = JSON.parse(hex2ascii(self.body));
+            // Resolve with the data if the object isn't the Genesis block
             if (self.height > 0){
                 resolve(dataDecoded);
             } else {
-                reject(Error('Error while decoding'));
+                resolve(null);
             }
         });
-        // Resolve with the data if the object isn't the Genesis block
-        return promise;
     }
 
 }

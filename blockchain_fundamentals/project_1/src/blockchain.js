@@ -131,7 +131,7 @@ class Blockchain {
                     resolve(newBlock);
                 }
             } else {
-                reject(Error('Time limit elapsed!'));
+                resolve('Time limit elapsed!');
             }
         });
     }
@@ -180,10 +180,11 @@ class Blockchain {
     getStarsByWalletAddress (address) {
         let self = this;
         let stars = [];
-        return new Promise((resolve, reject) => {
+        let blockData = null;
+        return new Promise(async (resolve, reject) => {
             for (const block of self.chain){
-                blockData = block.getBData();
-                if (blockData.address === address){
+                blockData = await block.getBData();
+                if (blockData && blockData.address === address){
                 stars.push({
                     'owner': blockData.address,
                     'star': blockData.star
