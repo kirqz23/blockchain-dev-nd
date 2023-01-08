@@ -75,6 +75,7 @@ class Blockchain {
            if (block){
             self.chain.push(block);
             self.height = height;
+            self.validateChain(); // validate chain every time new block is added
             resolve(block);
            } else {
             reject(Error('Block not added!'))
@@ -128,7 +129,6 @@ class Blockchain {
                             'star': star
                         });
                     self._addBlock(newBlock);
-                    self.validateChain(); // validate chain every time new block is added
                     resolve(newBlock);
                 }
             } else {
@@ -207,9 +207,6 @@ class Blockchain {
         let errorLog = [];
         return new Promise(async (resolve, reject) => {
             for (const block of self.chain){
-                if (!block.validate()) {
-                    errorLog.push(`Wrong hash: ${block.hash}`);
-                }
                 if (block.height > 0) {
                     let previousBlockHash = self.chain[block.height - 1].hash;
                     if (previousBlockHash != block.previousBlockHash){
