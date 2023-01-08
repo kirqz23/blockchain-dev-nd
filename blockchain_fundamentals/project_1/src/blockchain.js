@@ -131,8 +131,11 @@ class Blockchain {
                     self._addBlock(newBlock);
                     resolve(newBlock);
                 }
+                else {
+                    reject(Error('Verification failed!'));
+                }
             } else {
-                resolve('Time limit elapsed!');
+                reject(Error('Time limit elapsed!'));
             }
         });
     }
@@ -152,6 +155,7 @@ class Blockchain {
             } else {
                 resolve(null);
             }
+            reject(Error('Error happened'));
         });
     }
 
@@ -169,6 +173,7 @@ class Blockchain {
             } else {
                 resolve(null);
             }
+            reject(Error('Error happened'));
         });
     }
 
@@ -208,6 +213,11 @@ class Blockchain {
         return new Promise(async (resolve, reject) => {
             for (const block of self.chain){
                 if (block.height > 0) {
+                    let currentBlockHash = block.hash;
+                    let validateStatus = block.validate();
+                    if (!validateStatus){
+                        errorLog.push(`Wrong hash for block: ${block.hash}, it was: ${currentBlockHash}`);
+                    }
                     let previousBlockHash = self.chain[block.height - 1].hash;
                     if (previousBlockHash != block.previousBlockHash){
                         errorLog.push(`Wrong previousBlockhash for block: ${block.hash}`);
