@@ -10,7 +10,6 @@
  */
 
 const SHA256 = require('crypto-js/sha256');
-const e = require('express');
 const hex2ascii = require('hex2ascii');
 
 class Block {
@@ -40,9 +39,9 @@ class Block {
         let self = this;
         return new Promise((resolve, reject) => {
             // Save in auxiliary variable the current block hash
-            let hash = this.hash;
+            let hash = self.hash;
             // Recalculate the hash of the Block
-            self.hash = SHA256(JSON.stringify(self)).toString();
+            self.hash = SHA256(JSON.stringify({...self,hash : null})).toString();
             // Comparing if the hashes changed
             if (hash != self.hash){
             // Returning the Block is not valid

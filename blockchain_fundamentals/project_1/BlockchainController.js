@@ -117,6 +117,14 @@ class BlockchainController {
         });
     }
 
+    // This endpoint validates chain and returns a list of errors (if no errors empty list is returned)
+    requestChainVerification() {
+        this.app.post("/verifyChain", async (req, res) => {
+            let errorLog = await this.blockchain.validateChain();
+            return res.status(200).json(errorLog);
+        });
+    }
+
 }
 
 module.exports = (app, blockchainObj) => { return new BlockchainController(app, blockchainObj);}

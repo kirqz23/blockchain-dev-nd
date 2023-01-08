@@ -128,6 +128,7 @@ class Blockchain {
                             'star': star
                         });
                     self._addBlock(newBlock);
+                    self.validateChain(); // validate chain every time new block is added
                     resolve(newBlock);
                 }
             } else {
@@ -216,7 +217,7 @@ class Blockchain {
                     }
                 }
             }
-            resolve(errorLog);
+            resolve(errorLog);          
         });
     }
 
