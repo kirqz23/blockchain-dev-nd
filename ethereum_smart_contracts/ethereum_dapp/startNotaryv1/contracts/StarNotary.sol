@@ -8,13 +8,17 @@ contract StarNotary {
 
     event starClaimed(address owner);
 
-    constructor() {
+    constructor() public {
         starName = "Awesome Udacity Star";
     }
 
     function claimStar() public {
         starOwner = msg.sender;
         emit starClaimed(msg.sender);
+    }
+
+    function changeName(string memory newName) public {
+        starName = newName;
     }
 
 }
