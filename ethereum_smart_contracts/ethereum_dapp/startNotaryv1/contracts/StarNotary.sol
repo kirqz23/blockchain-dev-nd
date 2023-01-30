@@ -20,5 +20,4 @@ contract StarNotary {
     function changeName(string memory newName) public {
         starName = newName;
     }
-
 }
