@@ -21,12 +21,11 @@
  * phrase from a file you've .gitignored so it doesn't accidentally become public.
  *
  */
+const fs = require('fs');
+const HDWallet = require('truffle-hdwallet-provider');
+const infuraKey = fs.readFileSync("infura.secret").toString().trim();
+const mnemonic = fs.readFileSync("mnemonic.secret").toString().trim();
 
-// const HDWallet = require('truffle-hdwallet-provider');
-// const infuraKey = "fj4jll3k.....";
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -50,6 +49,13 @@ module.exports = {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 9545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
+    },
+
+    goerli: {
+      provider: () => new HDWallet(mnemonic, `https://goerli.infura.io/v3/${infuraKey}`),
+      network_id: 5,
+      gas: 4500000,
+      gasPrice: 10000000000
     },
 
     // Another network with more advanced options...
