@@ -46,7 +46,6 @@ const App = {
     let starName = await lookUptokenIdToStarInfo(id).call();
     App.setStatus("Found star: " + starName);
   }
-
 };
 
 window.App = App;
