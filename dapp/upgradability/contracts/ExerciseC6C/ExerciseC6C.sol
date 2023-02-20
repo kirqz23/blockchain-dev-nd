@@ -63,7 +63,7 @@ contract ExerciseC6C {
      *
      * @return A bool that indicates if the employee is registered
      */
-    function isEmployeeRegistered(string id) external view returns (bool) {
+    function isEmployeeRegistered(string calldata id) external view returns (bool) {
         return employees[id].isRegistered;
     }
 
@@ -72,7 +72,7 @@ contract ExerciseC6C {
     /********************************************************************************************/
 
     function registerEmployee(
-        string id,
+        string calldata id,
         bool isAdmin,
         address wallet
     ) external requireContractOwner {
@@ -88,7 +88,7 @@ contract ExerciseC6C {
         });
     }
 
-    function getEmployeeBonus(string id)
+    function getEmployeeBonus(string calldata id)
         external
         view
         requireContractOwner
@@ -98,10 +98,10 @@ contract ExerciseC6C {
     }
 
     function updateEmployee(
-        string id,
+        string calldata id,
         uint256 sales,
         uint256 bonus
-    ) internal requireContractOwner {
+    ) external {
         require(employees[id].isRegistered, "Employee is not registered.");
 
         employees[id].sales = employees[id].sales.add(sales);
