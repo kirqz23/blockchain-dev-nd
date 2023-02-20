@@ -9,6 +9,7 @@ contract Withdraw {
     mapping(address => uint256) private sales;
     uint256 private enabled = block.timestamp;
     uint256 private counter = 1;
+    bool private locked;
 
     constructor() public {
         contractOwner = msg.sender;
@@ -29,10 +30,19 @@ contract Withdraw {
         require(guard == counter, "That is not allowed");
     }
 
+    // re-entrancy guard version 2
+    modifier entrancyGuardV2(){
+        require(!locked, "No re-entrancy!");
+        locked = true;
+        _;
+        locked = false;
+    }
+
     function safeWithdraw(uint256 amount)
         external
         rateLimit(30 minutes)
         entrancyGuard
+        entrancyGuardV2
     {
         // Checks
         // check if the sender is externally owned account not contract
