@@ -80,7 +80,10 @@ contract ExerciseC6D {
     // Register an oracle with the contract
     function registerOracle() external payable {
         // CODE EXERCISE 1: Require registration fee
-        require(msg.value >= REGISTRATION_FEE, "You have to stake registration fee!");
+        require(
+            msg.value >= REGISTRATION_FEE,
+            "You have to stake registration fee!"
+        );
         // CODE EXERCISE 1: Generate three random indexes (range 0-9) using generateIndexes for the calling oracle
         uint8[3] memory indexes = generateIndexes(msg.sender);
         // CODE EXERCISE 1: Assign the indexes to the oracle and save to the contract state
@@ -108,7 +111,9 @@ contract ExerciseC6D {
     event OracleRequest(uint8 index, string flight, uint256 timestamp);
 
     // Generate a request
-    function fetchFlightStatus(string calldata flight, uint256 timestamp) external {
+    function fetchFlightStatus(string calldata flight, uint256 timestamp)
+        external
+    {
         // Generate a number between 0 - 9 to determine which oracles may respond
 
         // CODE EXERCISE 2: Replace the hard-coded value of index with a random index based on the calling account
@@ -149,7 +154,11 @@ contract ExerciseC6D {
         );
 
         // CODE EXERCISE 3: Require that the response is being submitted for a request that is still open
-        bytes32 key = 0; /* Replace 0 with code to generate a key using index, flight and timestamp */
+        bytes32 key = keccak256(abi.encodePacked(index, flight, timestamp));
+        require(
+            oracleResponses[key].isOpen,
+            "Flight or timestamp do not match oracle request"
+        );
 
         oracleResponses[key].responses[statusId].push(msg.sender);
 
@@ -157,18 +166,19 @@ contract ExerciseC6D {
         // oracles respond with the *** same *** information
         if (oracleResponses[key].responses[statusId].length >= MIN_RESPONSES) {
             // CODE EXERCISE 3: Prevent any more responses since MIN_RESPONSE threshold has been reached
-            /* Enter code here */
+            oracleResponses[key].isOpen = false;
 
             // CODE EXERCISE 3: Announce to the world that verified flight status information is available
-            /* Enter code here */
+            emit FlightStatusInfo(flight, timestamp, statusId, true);
 
             // Save the flight information for posterity
             bytes32 flightKey = keccak256(abi.encodePacked(flight, timestamp));
             flights[flightKey] = FlightStatus(true, statusId);
         } else {
             // Oracle submitting response but MIN_RESPONSES threshold not yet reached
+
             // CODE EXERCISE 3: Announce to the world that verified flight status information is available
-            /* Enter code here */
+            emit FlightStatusInfo(flight, timestamp, statusId, false);
         }
     }
 
@@ -189,7 +199,10 @@ contract ExerciseC6D {
     }
 
     // Returns array of three non-duplicating integers from 0-9
-    function generateIndexes(address account) internal returns (uint8[3] memory) {
+    function generateIndexes(address account)
+        internal
+        returns (uint8[3] memory)
+    {
         uint8[3] memory indexes;
         indexes[0] = getRandomIndex(account);
 
