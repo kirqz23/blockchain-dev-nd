@@ -80,18 +80,18 @@ contract ExerciseC6D {
     // Register an oracle with the contract
     function registerOracle() external payable {
         // CODE EXERCISE 1: Require registration fee
-        /* Enter code here */
+        require(msg.value >= REGISTRATION_FEE, "You have to stake registration fee!");
         // CODE EXERCISE 1: Generate three random indexes (range 0-9) using generateIndexes for the calling oracle
-        /* Enter code here */
+        uint8[3] memory indexes = generateIndexes(msg.sender);
         // CODE EXERCISE 1: Assign the indexes to the oracle and save to the contract state
-        /* Enter code here */
+        oracles[msg.sender] = indexes;
     }
 
     function getOracle(address account)
         external
         view
         requireContractOwner
-        returns (uint8[3])
+        returns (uint8[3] memory)
     {
         return oracles[account];
     }
@@ -108,7 +108,7 @@ contract ExerciseC6D {
     event OracleRequest(uint8 index, string flight, uint256 timestamp);
 
     // Generate a request
-    function fetchFlightStatus(string flight, uint256 timestamp) external {
+    function fetchFlightStatus(string calldata flight, uint256 timestamp) external {
         // Generate a number between 0 - 9 to determine which oracles may respond
 
         // CODE EXERCISE 2: Replace the hard-coded value of index with a random index based on the calling account
@@ -137,7 +137,7 @@ contract ExerciseC6D {
     // time of registration (i.e. uninvited oracles are not welcome)
     function submitOracleResponse(
         uint8 index,
-        string flight,
+        string calldata flight,
         uint256 timestamp,
         uint8 statusId
     ) external {
@@ -177,19 +177,19 @@ contract ExerciseC6D {
     /************************************ BEGIN: Utility Functions ************************************/
 
     // Query the status of any flight
-    function viewFlightStatus(string flight, uint256 timestamp)
+    function viewFlightStatus(string calldata flight, uint256 timestamp)
         external
         view
         returns (uint8)
     {
-        require(flights[flightKey].hasStatus, "Flight status not available");
+        //require(flights[flightKey].hasStatus, "Flight status not available");
 
         bytes32 flightKey = keccak256(abi.encodePacked(flight, timestamp));
         return flights[flightKey].status;
     }
 
     // Returns array of three non-duplicating integers from 0-9
-    function generateIndexes(address account) internal returns (uint8[3]) {
+    function generateIndexes(address account) internal returns (uint8[3] memory) {
         uint8[3] memory indexes;
         indexes[0] = getRandomIndex(account);
 
