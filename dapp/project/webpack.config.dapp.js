@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
   entry: ['babel-polyfill', path.join(__dirname, "src/dapp")],
   output: {
@@ -11,8 +10,18 @@ module.exports = {
     rules: [
     {
         test: /\.(js|jsx)$/,
-        use: "babel-loader",
-        exclude: /node_modules/
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        options: {
+          presets: [
+            '@babel/preset-env',
+            {
+              plugins: [
+                '@babel/plugin-proposal-class-properties'
+              ]
+            }
+          ]
+        },
       },
       {
         test: /\.css$/,
