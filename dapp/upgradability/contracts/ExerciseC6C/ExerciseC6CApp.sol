@@ -1,10 +1,11 @@
-pragma solidity ^0.5.16;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
 
 // It's important to avoid vulnerabilities due to numeric overflow bugs
 // OpenZeppelin's SafeMath library, when used correctly, protects agains such bugs
 // More info: https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2018/november/smart-contract-insecurity-bad-arithmetic/
 
-import "../../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "../../node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 contract ExerciseC6CApp {
     using SafeMath for uint256; // Allow SafeMath functions to be called for all uint256 types (similar to "prototype" in Javascript)
@@ -17,7 +18,7 @@ contract ExerciseC6CApp {
         _;
     }
 
-    constructor(address dataContract) public {
+    constructor(address dataContract) {
         contractOwner = msg.sender;
         exerciseC6C = ExerciseC6C(dataContract);
     }
@@ -42,10 +43,10 @@ contract ExerciseC6CApp {
     }
 }
 
-contract ExerciseC6C {
+abstract contract ExerciseC6C {
     function updateEmployee(
         string calldata id,
         uint256 sales,
         uint256 bonus
-    ) external;
+    ) virtual external;
 }
