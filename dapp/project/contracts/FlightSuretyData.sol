@@ -12,6 +12,24 @@ contract FlightSuretyData {
 
     address private contractOwner; // Account used to deploy contract
     bool private operational = true; // Blocks all state changes throughout the contract if false
+    uint256 private insuranceFund; // Amount of fund for insurance
+    mapping(address => bool) private authorizedCallers;
+
+    struct Airline {
+        bool isRegistered;
+        bool isFunded;
+    }
+
+    mapping(address => Airline) private airlines;
+    uint256 private numAirlinesRegistered;
+
+    struct Flight {
+        bool isRegistered;
+        uint8 statusCode;
+        uint256 updatedTimestamp;
+        address airline;
+    }
+    mapping(bytes32 => Flight) private flights;
 
     /********************************************************************************************/
     /*                                       EVENT DEFINITIONS                                  */
@@ -50,6 +68,14 @@ contract FlightSuretyData {
         _;
     }
 
+    modifier requireAuthCaller() {
+        require(
+            authorizedCallers[msg.sender] == true,
+            "Caller is not authorized"
+        );
+        _;
+    }
+
     /********************************************************************************************/
     /*                                       UTILITY FUNCTIONS                                  */
     /********************************************************************************************/
@@ -59,7 +85,7 @@ contract FlightSuretyData {
      *
      * @return A bool that is the current operating status
      */
-    function isOperational() public view returns (bool) {
+    function isOperational() public view requireAuthCaller returns (bool) {
         return operational;
     }
 
@@ -68,8 +94,35 @@ contract FlightSuretyData {
      *
      * When operational mode is disabled, all write transactions except for this one will fail
      */
-    function setOperatingStatus(bool mode) external requireContractOwner {
-        operational = mode;
+    function setOperatingStatus(bool _mode) external requireContractOwner {
+        operational = _mode;
+    }
+
+    function authorizeCaller(
+        address _authAddress
+    ) external requireContractOwner {
+        authorizedCallers[_authAddress] = true;
+    }
+
+    function deauthorizeCaller(
+        address _authAddress
+    ) external requireContractOwner {
+        delete authorizedCallers[_authAddress];
+    }
+
+    function isAirline(
+        address _airline
+    ) external view requireIsOperational requireAuthCaller returns (bool) {
+        return airlines[_airline].isRegistered;
+    }
+
+    function getAirlinesCount()
+        external
+        view
+        requireAuthCaller
+        returns (uint256)
+    {
+        return numAirlinesRegistered;
     }
 
     /********************************************************************************************/
@@ -81,13 +134,24 @@ contract FlightSuretyData {
      *      Can only be called from FlightSuretyApp contract
      *
      */
-    function registerAirline() external pure {}
+    function registerAirline(
+        address _newAirline
+    ) external requireIsOperational requireAuthCaller returns (uint256) {
+        require(
+            airlines[_newAirline].isRegistered == false,
+            "Airline is already registered"
+        );
+
+        airlines[_newAirline] = Airline({isRegistered: true, isFunded: false});
+        numAirlinesRegistered.add(1);
+        return 0;
+    }
 
     /**
      * @dev Buy insurance for a flight
      *
      */
-    function buy() external payable {}
+    function buy() external payable requireAuthCaller {}
 
     /**
      *  @dev Credits payouts to insurees
@@ -105,7 +169,9 @@ contract FlightSuretyData {
      *      resulting in insurance payouts, the contract should be self-sustaining
      *
      */
-    function fund() public payable {}
+    function fund() public payable requireIsOperational requireAuthCaller {
+        insuranceFund.add(msg.value);
+    }
 
     function getFlightKey(
         address airline,

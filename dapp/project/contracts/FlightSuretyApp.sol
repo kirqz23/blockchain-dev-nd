@@ -26,16 +26,11 @@ contract FlightSuretyApp {
     uint8 private constant STATUS_CODE_LATE_TECHNICAL = 40;
     uint8 private constant STATUS_CODE_LATE_OTHER = 50;
 
+    uint256 private constant AIRLINE_FUND = 10 ether;
+    uint256 private constant PASSANGER_MAX_INSURANCE = 1 ether;
+
     address private contractOwner; // Account used to deploy contract
     FlightSuretyData private dataContract;
-
-    struct Flight {
-        bool isRegistered;
-        uint8 statusCode;
-        uint256 updatedTimestamp;
-        address airline;
-    }
-    mapping(bytes32 => Flight) private flights;
 
     /********************************************************************************************/
     /*                                       FUNCTION MODIFIERS                                 */
@@ -50,9 +45,8 @@ contract FlightSuretyApp {
      *      the event there is an issue that needs to be fixed
      */
     modifier requireIsOperational() {
-        // Modify to call data contract's status
         require(isOperational() == true, "Contract is currently not operational");
-        _; // All modifiers require an "_" which indicates where the function body will be added
+        _;
     }
 
     /**
@@ -60,6 +54,14 @@ contract FlightSuretyApp {
      */
     modifier requireContractOwner() {
         require(msg.sender == contractOwner, "Caller is not contract owner");
+        _;
+    }
+
+    /**
+     * @dev Modifier that requires the "Airline" account to be the function caller
+     */
+    modifier requireAirline(){
+        require(dataContract.isAirline(msg.sender) == true || dataContract.getAirlinesCount() == 0, "Caller is not an Airline");
         _;
     }
 
@@ -81,7 +83,7 @@ contract FlightSuretyApp {
     /********************************************************************************************/
 
     function isOperational() public view returns (bool) {
-        return dataContract.isOperational(); // Modify to call data contract's status
+        return dataContract.isOperational(); 
     }
 
     /********************************************************************************************/
@@ -92,19 +94,27 @@ contract FlightSuretyApp {
      * @dev Add an airline to the registration queue
      *
      */
-    function registerAirline()
+    function registerAirline(address newAirline)
         external
-        pure
+        payable
+        requireIsOperational
+        requireAirline
         returns (bool success, uint256 votes)
     {
+        dataContract.registerAirline(newAirline);
         return (success, 0);
+    }
+
+    function fund() external payable requireIsOperational{
+        require(msg.value >= AIRLINE_FUND, "Not enough funds sent!");
+        dataContract.fund();
     }
 
     /**
      * @dev Register a future flight for insuring.
      *
      */
-    function registerFlight() external pure {}
+    function registerFlight() external requireIsOperational {}
 
     /**
      * @dev Called after oracle has updated flight status
