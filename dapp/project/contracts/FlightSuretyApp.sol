@@ -29,6 +29,9 @@ contract FlightSuretyApp {
     uint256 private constant AIRLINE_FUND = 10 ether;
     uint256 private constant PASSANGER_MAX_INSURANCE = 1 ether;
 
+    uint8 private constant AIRLINES_MIN_COUNT = 4;
+    mapping(address => address[]) private multiCalls;
+
     address private contractOwner; // Account used to deploy contract
     FlightSuretyData private dataContract;
 
@@ -45,7 +48,10 @@ contract FlightSuretyApp {
      *      the event there is an issue that needs to be fixed
      */
     modifier requireIsOperational() {
-        require(isOperational() == true, "Contract is currently not operational");
+        require(
+            isOperational() == true,
+            "Contract is currently not operational"
+        );
         _;
     }
 
@@ -60,8 +66,20 @@ contract FlightSuretyApp {
     /**
      * @dev Modifier that requires the "Airline" account to be the function caller
      */
-    modifier requireAirline(){
-        require(dataContract.isAirline(msg.sender) == true || dataContract.getAirlinesCount() == 0, "Caller is not an Airline");
+    modifier requireAirline(address _address) {
+        require(
+            dataContract.isAirline(_address) ||
+                dataContract.getAirlinesRegistered() == 0,
+            "Caller is not an Airline"
+        );
+        _;
+    }
+
+    modifier requireFundedAirline(address _address) {
+        require(
+            dataContract.isAirlineFunded(_address),
+            "Airline is not funded"
+        );
         _;
     }
 
@@ -83,7 +101,7 @@ contract FlightSuretyApp {
     /********************************************************************************************/
 
     function isOperational() public view returns (bool) {
-        return dataContract.isOperational(); 
+        return dataContract.isOperational();
     }
 
     /********************************************************************************************/
@@ -94,27 +112,82 @@ contract FlightSuretyApp {
      * @dev Add an airline to the registration queue
      *
      */
-    function registerAirline(address newAirline)
+    function registerAirline(
+        address _newAirline
+    )
+        external
+        requireIsOperational
+        requireAirline(msg.sender)
+        returns (bool success, uint256 votes)
+    {
+        if (dataContract.getAirlinesRegistered() <= AIRLINES_MIN_COUNT) {
+            dataContract.registerAirline(_newAirline);
+            success = true;
+            votes = 0;
+        } else {
+            bool isDuplicate = false;
+            for (uint256 c = 0; c < multiCalls[_newAirline].length; c++) {
+                if (multiCalls[_newAirline][c] == msg.sender) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            require(!isDuplicate, "Caller has already voted!");
+
+            multiCalls[_newAirline].push(msg.sender);
+            if (
+                multiCalls[_newAirline].length >=
+                dataContract.getAirlinesFunded() / 2
+            ) {
+                dataContract.registerAirline(_newAirline);
+                success = true;
+            } else {
+                success = false;
+            }
+            votes = multiCalls[_newAirline].length;
+        }
+        return (success, votes);
+    }
+
+    function fund()
         external
         payable
         requireIsOperational
-        requireAirline
-        returns (bool success, uint256 votes)
+        requireAirline(msg.sender)
     {
-        dataContract.registerAirline(newAirline);
-        return (success, 0);
+        require(msg.value >= AIRLINE_FUND, "Not enough funds sent!");
+        require(
+            !dataContract.isAirlineFunded(msg.sender),
+            "Airline is already funded!"
+        );
+        dataContract.fund{value: msg.value}(msg.sender);
     }
 
-    function fund() external payable requireIsOperational{
-        require(msg.value >= AIRLINE_FUND, "Not enough funds sent!");
-        dataContract.fund();
+    function buy(
+        address _airline,
+        bytes32 _flight
+    ) external payable requireIsOperational requireFundedAirline(_airline) {
+        require(
+            msg.value <= PASSANGER_MAX_INSURANCE,
+            "Too high insurance value!"
+        );
+        require(
+            dataContract.getFlightAirline(_flight) == _airline,
+            "Flight is not registered for this airline!"
+        );
+
+        dataContract.buy{value: msg.value}(msg.sender, _airline, _flight);
     }
 
     /**
      * @dev Register a future flight for insuring.
      *
      */
-    function registerFlight() external requireIsOperational {}
+    function registerFlight(
+        bytes32 _name
+    ) external requireIsOperational requireFundedAirline(msg.sender) {
+        dataContract.registerFlight(_name, msg.sender, STATUS_CODE_UNKNOWN);
+    }
 
     /**
      * @dev Called after oracle has updated flight status
@@ -125,7 +198,19 @@ contract FlightSuretyApp {
         string memory flight,
         uint256 timestamp,
         uint8 statusCode
-    ) internal pure {}
+    ) internal {
+        require(statusCode != STATUS_CODE_UNKNOWN, "Flight status UNKNOWN");
+        require(
+            dataContract.getFlightAirline(bytes32(bytes(flight))) == airline,
+            "No flight for such airline"
+        );
+
+        dataContract.updateFlightStatus(
+            bytes32(bytes(flight)),
+            statusCode,
+            timestamp
+        );
+    }
 
     // Generate a request for oracles to fetch flight information
     function fetchFlightStatus(
@@ -272,10 +357,9 @@ contract FlightSuretyApp {
     }
 
     // Returns array of three non-duplicating integers from 0-9
-    function generateIndexes(address account)
-        internal
-        returns (uint8[3] memory)
-    {
+    function generateIndexes(
+        address account
+    ) internal returns (uint8[3] memory) {
         uint8[3] memory indexes;
         indexes[0] = getRandomIndex(account);
 
